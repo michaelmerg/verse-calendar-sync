@@ -1,0 +1,31 @@
+{
+  "name": "Verse to Google Calendar Sync",
+  "version": "0.1.0",
+  "manifest_version": 2,
+  "description": "Synchronise IBM Verse calendar events to Google calendar",
+  "icons": {
+    "16": "icons/Icon-16.png",
+    "48": "icons/Icon-48.png",
+    "128": "icons/Icon-128.png"
+  },
+  "background": {
+    "scripts": [
+      "src/common.js",
+      "src/luxon.min.js",
+      "src/background/google-api.js",
+      "src/background/verse-api.js",
+      "src/background/background.js"
+    ],
+    "persistent": true
+  },
+  "options_ui": {
+    "page": "src/options_ui/options.html",
+    "chrome_style": true
+  },
+  "content_security_policy": "script-src 'self' https://apis.google.com; object-src 'self'",
+  "permissions": ["identity", "storage", "*://*/*"],
+  "oauth2": {
+    "client_id": "789975739772-pecbpn39f877ks1f3ciqk3psg7t8o02h.apps.googleusercontent.com",
+    "scopes": ["https://www.googleapis.com/auth/calendar"]
+  }
+}

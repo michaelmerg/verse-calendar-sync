@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Extension Options</title>
+  <link rel="stylesheet" href="options.css">
+</head>
+
+<body>
+
+  <div id="missing-permission">
+    <strong>Allow access to Google Calendar</strong>
+    <p class="description">In order to synchronize calendar events from Verse to Google Calendar, this extension needs read and write-access to
+      your Google Calendar.</p>
+    <button id="grant-access">Allow access</button>
+    <div id="auth-error" class="error"></div>
+  </div>
+
+  <div id="options">
+    <div class="input-field">
+      <label>
+        Google Calendar:
+        <select id="calendar-id">
+          <option disabled selected>Loading...</option>
+        </select>
+      </label>
+    </div>
+
+    <div class="input-field">
+      <label>
+        Verse Base URL:
+        <input type="url" id="verse-base-url" />
+      </label>
+    </div>
+
+    <div class="input-field">
+      <label>
+        Days to Sync:
+        <input type="number" id="days-to-sync" min="1" max="90" />
+      </label>
+    </div>
+
+    <div class="footer">
+      <button id="save">Save</button>
+      <span id="status"></span>
+      <button id="sync-now">Sync now</button>
+    </div>
+
+    <div id="sync-error" class="error"></div>
+  </div>
+
+  <script src="../common.js"></script>
+  <script src="options.js"></script>
+</body>
+
+</html>
